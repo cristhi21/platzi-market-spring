@@ -27,6 +27,12 @@ public class Producto {
 
     private  Boolean estado;
 
+    //insertable = false, updatable = false, significa que a traves de estas relaciones no vamos a borrar ni actualizar ni vamos a insertar una nueva categoria
+    //Solo servira para saber a que categoria pertenece un producto
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
     public Integer getIdProducto() {
         return idProducto;
     }
