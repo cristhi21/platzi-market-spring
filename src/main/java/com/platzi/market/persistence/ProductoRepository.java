@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Esta es una clase que interactua direcgtamente con la DB, es buena practica decorarla con la anotacion @Repository
+ * Esta es una clase que interactua directamente con la DB, es buena practica decorarla con la anotacion @Repository
  * Con esto indicamos a Spring que esta clase interactua con la DB ya que aca realizamos las operaciones que queremos aplicar en las tablas
- * Tambien se puede uutilizar @Component - Esta es una generalizacion, le indicamos que es un componente de spring
- * es mejor usar @Repository
+ * Tambien se puede utilizar @Component - Esta es una generalizacion, le indicamos que es un componente de spring
+ * es mejor usar @Repository porque indica que tipo de componenete en especifico es
  */
 @Repository
 public class ProductoRepository {
@@ -27,7 +27,7 @@ public class ProductoRepository {
     }
 
     public Optional<List<Producto>> getEscasos(int cantidad){
-        return  productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
+        return productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
     }
 
     public Optional<Producto> getProducto(int idProducto){

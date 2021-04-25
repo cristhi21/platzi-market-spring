@@ -18,7 +18,8 @@ public interface ProductoCrudRepository extends CrudRepository<Producto, Integer
     //2. Query nativa
     @Query(value = "SELECT * FROM productos WHERE id_categoria = ?", nativeQuery = true)
     List<Producto> getByCategoriaNative(int idProducto);
-    //NOTA: Es mejor practica usar los query methods que las query de manera nativa por la flexibilidad que nos dan
+    /*Si usamos la anotacion @Query no es necesario que nombremos el method getByCategoriaNative*/
+    //NOTA: Es mejor practica usar los query methods que las query de manera nativa por la flexibilidad al ahora de implementar el codigo
 
     //Los query methods tambien soportan los opertadores opcionales de las nuevas versiones de Java
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int cantidadStock, boolean estado);
