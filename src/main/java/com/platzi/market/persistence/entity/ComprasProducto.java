@@ -15,12 +15,13 @@ public class ComprasProducto {
     private Boolean estado;
 
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
-    private Compra compras;
+    private Compra compra;
 
     @ManyToOne
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
-    private Producto productos;
+    private Producto producto;
 
     public ComprasProductoPK getId() {
         return id;
@@ -54,19 +55,19 @@ public class ComprasProducto {
         this.estado = estado;
     }
 
-    public Compra getCompras() {
-        return compras;
+    public Compra getCompra() {
+        return compra;
     }
 
-    public void setCompras(Compra compras) {
-        this.compras = compras;
+    public void setCompra(Compra compra) {
+        this.compra = compra;
     }
 
-    public Producto getProductos() {
-        return productos;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setProductos(Producto productos) {
-        this.productos = productos;
+    public void setProductos(Producto producto) {
+        this.producto = producto;
     }
 }
